@@ -16,9 +16,11 @@ public class Grafo {
 		}
 	}
 
-	public void addAresta(int aresta1, int aresta2) {
+	public void addAresta(String arestas) {
 
-		adjacencias.get(aresta1).add(new Aresta(aresta2));
+		String posiçoes[] = arestas.split("-");
+		
+		adjacencias.get(Integer.valueOf(posiçoes[0])).add(new Aresta(Integer.valueOf(posiçoes[1])));
 
 	}
 
