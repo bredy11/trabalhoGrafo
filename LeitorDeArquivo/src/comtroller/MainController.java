@@ -1,4 +1,6 @@
-package LerArquivo;
+package comtroller;
+
+import LerArquivo.LeitorDeArquivo;
 
 public class MainController {
 
