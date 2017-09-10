@@ -2,43 +2,50 @@ package LerArquivo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+
+import model.Grafo;
 
 public class LeitorDeArquivo {
 
 	String caminho = "C:\\Users\\rafael\\Desktop\\grafo.txt";
 
-	public void pegarLinhaArquivo() {
+	public Grafo pegarLinhaArquivo() {
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(caminho));
 			int linhaCont = 0;
-			String[] V = null;
-			String[] A = null;
+			String[] v = null;
+			String[] a = null;
 			while (br.ready()) {
 				if (linhaCont == 0) {
 					String linha = br.readLine();
-					linha = linha.replace("V={", "").replace("}", "");
+					linha = linha.replace("V=", "");
 
-					V = linha.split(",");
-
+					v = linha.split(",");
 					linhaCont++;
 				} else {
 					String linha = br.readLine();
-					linha = linha.replace("A={", "").replace("}", "");
-					linha = linha.replace("(", "");
-					A = linha.split("\\),");
+					linha = linha.replace("A=", "");
+
+					a = linha.split(";");
 				}
 			}
 
-			System.out.println(V.length);
 			br.close();
-
+			return construirGrafo(a, v);
 		} catch (Exception ioe) {
 			ioe.printStackTrace();
 			ioe.printStackTrace();
 		}
+		return null;
+	}
 
+	private Grafo construirGrafo(String[] vetorA, String[] vetorV) {
+		Grafo grafo = new Grafo(vetorV.length);
+		for (int i = 0; i < vetorA.length; i++) {
+			grafo.addAresta(vetorA[i]);
+		}
+		return grafo;
 	}
 
 }

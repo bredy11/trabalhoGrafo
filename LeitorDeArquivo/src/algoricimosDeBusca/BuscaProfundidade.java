@@ -51,8 +51,7 @@ public class BuscaProfundidade {
 			}
 
 		}
-		// DFSRecursivo(G, w);
-
+		
 	}
 
 }
