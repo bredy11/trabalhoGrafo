@@ -1,4 +1,4 @@
-package comtroller;
+package controller;
 
 import LerArquivo.LeitorDeArquivo;
 import algoricimosDeBusca.BuscaProfundidade;
