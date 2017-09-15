@@ -14,18 +14,19 @@ public class BuscaProfundidade {
 		pre = new int[grafoTamanho];
 	}
 
-	public void dfs(Grafo G) {
+	public void dfs(Grafo G, int v) {
 		cont = 0;
-		int v = 0;
+		
 		for (int i = 0; i < pre.length; i++) {
 			pre[i] = -1;
 
 		}
 		List<List<Aresta>> arestas = G.getAdjacencias();
-		for (v = 0; v < arestas.size(); v++) {
+		while ( v < arestas.size()) {
 			if (pre[v] == -1) {
 				DFSRecursivo(G, G.getAdjacencias().get(v), v);
 			}
+			v++;
 		}
 		
 		

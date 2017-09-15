@@ -11,7 +11,7 @@ public class MainController {
 		Grafo grafo = 	leitorDeArquivo.pegarLinhaArquivo();
 		
 		BuscaProfundidade buscaProfundidade = new BuscaProfundidade(grafo.getNumeroDeVertice());
-		buscaProfundidade.dfs(grafo);
+		buscaProfundidade.dfs(grafo,5);
 		
 		
 		

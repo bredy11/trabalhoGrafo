@@ -7,7 +7,7 @@ import model.Grafo;
 
 public class LeitorDeArquivo {
 
-	String caminho = "C:\\Users\\rafael\\Desktop\\grafo.txt";
+	String caminho = "C:\\Users\\1422130006\\Desktop\\grafo.txt";
 
 	public Grafo pegarLinhaArquivo() {
 
